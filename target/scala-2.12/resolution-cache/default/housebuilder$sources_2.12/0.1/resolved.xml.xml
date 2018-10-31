@@ -4,7 +4,7 @@
 		module="housebuilder$sources_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20181025151408"
+		publication="20181031130943"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>
