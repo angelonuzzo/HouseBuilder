@@ -1,6 +1,8 @@
 import akka.actor.ActorRef
 
-class casa(var boh:String)
+class casa(var status:String)
+
+class workStartMessage (var house:casa)
 
 
 class auctionStatus (var task: Int, var currentBid: Int, var currentWinner: ActorRef, var auctioRef: ActorRef)

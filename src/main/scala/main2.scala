@@ -19,7 +19,7 @@ object main2 extends App {
   implicit val system = ActorSystem("QuickStart")
   implicit val materializer = ActorMaterializer()
 
-  var casagiacomo = new casa("ciao")
+  var casagiacomo = new casa("0")
 
   val BuilderA = system.actorOf(Props(classOf[BuilderA]),"BuilderA")
   val BuilderB = system.actorOf(Props(classOf[BuilderB]),"BuilderB")
@@ -31,14 +31,16 @@ object main2 extends App {
 
   val orchestrator = system.actorOf(Props(classOf[Orchestrator]),"OrchestratorA")
 
-  orchestrator ! "inizia"
+  val startMessage = new workStartMessage(casagiacomo)
+
+  orchestrator ! startMessage
 
   class BuilderA extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+A")
-        reply.boh="ciao+A"
+        val reply = house//.status.concat("+A")
+        reply.status+="+A"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -46,8 +48,9 @@ object main2 extends App {
   class BuilderB extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+B")
+        val reply = house//.status.concat("+B")
+        reply.status+="+B"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -55,8 +58,9 @@ object main2 extends App {
   class BuilderC extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+C")
+        val reply = house//.status.concat("+C")
+        reply.status+="+C"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -64,8 +68,10 @@ object main2 extends App {
   class BuilderD extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+D")
+        Thread.sleep(1000)
+        val reply = house//.status.concat("+D")
+        reply.status+="+D"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -73,8 +79,9 @@ object main2 extends App {
   class BuilderE extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+E")
+        val reply = house//.status.concat("+E")
+        reply.status+="+E"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -82,8 +89,9 @@ object main2 extends App {
   class BuilderF extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+F")
+        val reply = house//.status.concat("+F")
+        reply.status+="+F"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -91,8 +99,9 @@ object main2 extends App {
   class BuilderG extends Actor {
     def receive = {
       case house: casa ⇒
-        println(s"Sono ${self.path.name} e ho completato il mio lavoro")
-        val reply = house//.boh.concat("+G")
+        val reply = house//.status.concat("+G")
+        reply.status+="+G"
+        println(s"Sono ${self.path.name} e ho completato il mio lavoro. Lo stato attuale della casa è ${casagiacomo.status}")
         sender() ! reply // reply to the ask
     }
   }
@@ -105,12 +114,23 @@ object main2 extends App {
     }
   }
 
+
   class Orchestrator extends Actor {
     override def receive: Receive = {
-      case "inizia" =>
+
+      case m:casa =>
+        casagiacomo.status="Completata!"
+        println(s"Sono ${self.path.name} e lo stato attuale della casa è ${casagiacomo.status}")
+        system.terminate()
+
+      case m:workStartMessage =>
+        
+        println(s"Sono ${self.path.name} e sto per fare costruire la casa ${m.house}, lo stato attuale della casa è ${m.house.status}")
+
+
 
         val graph = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =>
-          val S: Outlet[casa]             = builder.add(Source.single(casagiacomo)).out
+          val S: Outlet[casa]             = builder.add(Source.single(m.house)).out
           val A: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderA))
           val B: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderB))
           val C: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderC))
@@ -118,10 +138,10 @@ object main2 extends App {
           val D: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderD))
           val E: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderE))
           val F: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderF))
-          val zip = builder.add(ZipWith[casa, casa, casa, casa](zipper = (A1:casa,A2:casa, A3:casa)=>casagiacomo))
+          val zip = builder.add(ZipWith[casa, casa, casa, casa](zipper = (A1:casa,A2:casa, A3:casa)=>m.house))
           val G: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderG))
 
-          val Z: Inlet[Any]              = builder.add(Sink.foreach(println)).in
+          val Z: Inlet[Any]              = builder.add(Sink.foreach[Any](_ =>    self ! m.house)).in
 
 
           S ~> A  ~>  B ~> C  ~>  b1 ~>  D ~> zip.in0
@@ -131,6 +151,7 @@ object main2 extends App {
           stream.ClosedShape
         })
 
+        println(s"Sono ${self.path.name} e lo stato attuale della casa è ${casagiacomo.status}")
 
         graph.run()
 
