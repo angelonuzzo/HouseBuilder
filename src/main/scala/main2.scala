@@ -1,8 +1,9 @@
 
 import akka.actor.{Actor, ActorSystem, Props}
+import akka.stream
 import akka.stream._
 import akka.stream.scaladsl.GraphDSL.Implicits._
-import akka.stream.scaladsl.{Broadcast, Flow, GraphDSL, Merge, RunnableGraph, Sink, Source}
+import akka.stream.scaladsl.{Broadcast, Flow, GraphDSL, RunnableGraph, Sink, Source, ZipWith}
 import akka.util.Timeout
 
 import scala.concurrent.duration._
@@ -117,19 +118,17 @@ object main2 extends App {
           val D: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderD))
           val E: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderE))
           val F: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderF))
-          val m1 = builder.add(Merge[casa](3))  // Secondo me dovremmo usare ZipWith -----> https://doc.akka.io/docs/akka/2.5/stream/stream-cookbook.html#triggering-the-flow-of-elements-programmatically
+          val zip = builder.add(ZipWith[casa, casa, casa, casa](zipper = (A1:casa,A2:casa, A3:casa)=>casagiacomo))
           val G: FlowShape[casa, casa]     = builder.add(Flow[casa].ask[casa](parallelism = 5)(BuilderG))
 
           val Z: Inlet[Any]              = builder.add(Sink.foreach(println)).in
 
 
-
-
-
-          S ~> A  ~>  B ~> C  ~>  b1 ~>  D ~> m1 ~> G ~> Z
-                                  b1 ~>  E ~> m1
-                                  b1 ~> F ~> m1
-          ClosedShape
+          S ~> A  ~>  B ~> C  ~>  b1 ~>  D ~> zip.in0
+                                  b1 ~>  E ~> zip.in1
+                                  b1 ~> F ~> zip.in2
+                                              zip.out ~> G ~> Z
+          stream.ClosedShape
         })
 
 
