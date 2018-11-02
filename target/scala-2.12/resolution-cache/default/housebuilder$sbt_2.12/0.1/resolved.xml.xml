@@ -4,7 +4,7 @@
 		module="housebuilder$sbt_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20181031130941"
+		publication="20181102200901"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

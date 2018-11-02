@@ -32,7 +32,7 @@ object main extends App {
 
 
 
-  // Gli invio il messaggio di start
+  // Gli invio il messaggio di start..
   Auctioneer ! "start"
 
 
