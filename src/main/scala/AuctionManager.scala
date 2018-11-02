@@ -7,7 +7,7 @@ class AuctionManager(var taskID: Int, var taskName: String, var maxValue: Int) e
   var currentBid=maxValue
 
   // Comunico la creazione dell'asta attraverso l'event bus
-  val newAuction = new auctionStatus(taskID,maxValue,null, self)
+  val newAuction = new auctionStatus(taskID,maxValue,null, self,true)
   system.eventStream.publish(newAuction)
 
 
@@ -29,7 +29,7 @@ class AuctionManager(var taskID: Int, var taskName: String, var maxValue: Int) e
         println(s"Nuova offerta migliore per l'asta ${taskName}: ${sender().path.name} ha offerto ${m.value}")
 
         //Faccio uno stream comunicando il nuovo stato dell'asta
-        val newStatus = new auctionStatus(taskID,currentBid,currentWinner,self)
+        val newStatus = new auctionStatus(taskID,currentBid,currentWinner,self,true)
         system.eventStream.publish(newStatus)
       }
 
@@ -38,8 +38,9 @@ class AuctionManager(var taskID: Int, var taskName: String, var maxValue: Int) e
 
       context.become(astaChiusa)
 
-      val endStatus = new auctionStatus(taskID,currentBid,currentWinner,self)
+      val endStatus = new auctionStatus(taskID,currentBid,currentWinner,self,false)
       sender() ! endStatus
+      system.eventStream.publish(endStatus)
 
   }
 

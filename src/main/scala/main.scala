@@ -1,4 +1,5 @@
 import akka.actor.{ActorSystem, Props}
+import akka.stream.ActorMaterializer
 
 
 object main extends App {
@@ -6,6 +7,7 @@ object main extends App {
 
   //Creo il sistema di agenti
   val system: ActorSystem = ActorSystem.create("test-system")
+  implicit val system2 = ActorSystem("QuickStart")
   println("Sto inizializzando le companies")
 
   // Creo tutte le companies
@@ -26,9 +28,12 @@ object main extends App {
   // Credo l'attore Auctioneer
   val Auctioneer = system.actorOf(Props(classOf[Auctioneer]), "Auctioneer")
 
+  implicit val materializer = ActorMaterializer()
+
+
+
   // Gli invio il messaggio di start
   Auctioneer ! "start"
-
 
 
 

@@ -1,58 +1,13 @@
 import akka.actor.ActorRef
 
-class casa(var status:String)
+class auctionStatus (var task: Int, var currentBid: Int, var currentWinner: ActorRef, var auctioRef: ActorRef, var open: Boolean)
 
-class workStartMessage (var house:casa)
+class bidMessage(var value:Int)
 
+class showWinners ()
 
-class auctionStatus (var task: Int, var currentBid: Int, var currentWinner: ActorRef, var auctioRef: ActorRef)
+class AuctionEndMessage (var auction:ActorRef, var auctionID:Int)
 
-class killMessage(var dyingActor:ActorRef)
+class startWorkMessage (var house:buildingHouse)
 
-class bidMessage(var value:Int){
-
-}
-
-class AuctionMessage (var obj: String, var resPrice: Int, var ref: ActorRef, var objnumber:Int){
-
-}
-
-class AuctionEndMessage (var auction:ActorRef, var auctionID:Int) {
-
-}
-
-class showWinners () {
-
-}
-
-class AuctionSubscribeMessage(){
-
-}
-
-class AuctionStartMessage(var duration:Int){
-
-}
-
-class StartBiddingMessage (var obj: String, var resPrice: Int, var ref: ActorRef, var objnumber:Int){
-
-}
-
-class StopBidMessage{
-
-}
-
-class WinnerMessage(var winner: ActorRef, var value: Int, var obj:String){
-
-}
-
-class StartWork(var work:Int, var lavori:Array[String]){
-
-}
-
-class WorkCompleted(var work:Int){
-
-}
-
-class winnerCongrats(var auctionID:Int){
-
-}
+class buildingHouse(var status:String, var owner:String, var status2: Int)

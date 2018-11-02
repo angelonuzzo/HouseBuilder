@@ -1,11 +1,14 @@
-import akka.actor.{Actor, ActorRef, Props}
-
-import scala.concurrent.duration._
-import akka.actor._
+import akka.actor.{Actor, ActorRef, Props, _}
 import akka.pattern.ask
+import akka.stream
+import akka.stream.scaladsl.GraphDSL.Implicits._
+import akka.stream.scaladsl.{Broadcast, Flow, GraphDSL, RunnableGraph, Sink, Source, ZipWith}
+import akka.stream.{FlowShape, Inlet, Outlet}
 import akka.util.Timeout
+import main.materializer
 
 import scala.concurrent.Await
+import scala.concurrent.duration._
 
 class Auctioneer() extends Actor{
   import context._
@@ -62,7 +65,7 @@ class Auctioneer() extends Actor{
 
       // Qui creo un messaggio di fine asta e lo schedulo per essermi inviato tra "delay"
       val stopAuction = new AuctionEndMessage(Auctionx,n)
-      system.scheduler.scheduleOnce(5000 milliseconds /*1*/, self, stopAuction)
+      system.scheduler.scheduleOnce(1 milliseconds /*1*/, self, stopAuction)
 
     }
   }
@@ -82,12 +85,7 @@ class Auctioneer() extends Actor{
     println(s"Il vincitore per l'asta ${taskNames(winner.task)} è ${winner.currentWinner.path.name} con un'offerta di ${winner.currentBid} (max: ${maxPrices(winner.task)})")
 
 
-
-    //var byeBye = new killMessage(sender())
-    //system.scheduler.scheduleOnce(5000 milliseconds, self, byeBye)
-
     //Termino l'attore relativo all'asta
-    Thread.sleep(1000)
     context.stop(m.auction)
 
 
@@ -106,7 +104,10 @@ class Auctioneer() extends Actor{
       for(i<-0 to auctionWinners.size-1){
         println(s"${taskNames(i)} ----------->   ${auctionWinners(i).path.name}.")
       }
-      self ! "startWorks"
+      val houseToBuild = new buildingHouse("WorksCommitted","Giacomo",0)
+      val letsBuildIt = new startWorkMessage(houseToBuild)
+
+      self ! letsBuildIt
     }
 
   }
@@ -122,23 +123,56 @@ class Auctioneer() extends Actor{
 
       stopAuction(m)
 
-    case m:killMessage =>
-//      context.stop(m.dyingActor)
+
+    case m:startWorkMessage =>
+
+      println(s"Sono ${self.path.name} e sto per fare costruire la casa di ${m.house.owner}, lo stato attuale della casa è ${m.house.status}")
 
 
-    case "startWorks" =>
-      /*
-      var counter:Int=0
-      for ((k,v) <- vincitori){
-        ArrayVincitori(counter)=v
-        counter+=1
-      }
 
-      val Architetto = context.actorOf(Props(classOf[Architetto],ArrayVincitori,objects,precedenzeLavori),s"architetto")
-      println(s"Diamo il benvenuto all'architetto Vakka che dirigerà i lvori di costruzione")
-      Architetto ! "ciao"
+      implicit val askTimeout = Timeout(5 seconds)
 
-*/
+
+      val graph = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder =>
+        val S: Outlet[buildingHouse]             = builder.add(Source.single(m.house)).out
+        val A: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(0)))
+        val B: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(1)))
+        val C: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(2)))
+        val b1 = builder.add(Broadcast[buildingHouse](3))
+        val D: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(3)))
+        val E: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(4)))
+        val F: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(4)))
+        val zip = builder.add(ZipWith[buildingHouse, buildingHouse, buildingHouse, buildingHouse](zipper = (A1:buildingHouse,A2:buildingHouse, A3:buildingHouse)=>m.house))
+        val Q: FlowShape[buildingHouse, buildingHouse]          = builder.add(Flow[buildingHouse].map(elem => elem))
+        val b2 = builder.add(Broadcast[buildingHouse](3))
+        val G: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(5)))
+        val H: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(6)))
+        val I: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(7)))
+        val zip2 = builder.add(ZipWith[buildingHouse, buildingHouse, buildingHouse, buildingHouse](zipper = (B1:buildingHouse,B2:buildingHouse, B3:buildingHouse)=>m.house))
+        val J: FlowShape[buildingHouse, buildingHouse]     = builder.add(Flow[buildingHouse].ask[buildingHouse](parallelism = 5)(auctionWinners(7)))
+        val Z: Inlet[Any]              = builder.add(Sink.foreach[Any](_ =>    self ! m.house)).in
+
+
+
+        S ~> A  ~>  B ~> C  ~>  b1 ~>  D ~> zip.in0
+                                b1 ~>  E ~> zip.in1
+                                b1 ~> F ~> zip.in2
+                                                      zip.out ~>  Q ~>  b2 ~>  G ~> zip2.in0
+                                                                        b2 ~>  H ~> zip2.in1
+                                                                        b2 ~>  I ~> zip2.in2
+                                                                                                zip2.out ~> J ~> Z
+
+        stream.ClosedShape
+
+      })
+
+
+      graph.run()
+
+    case m:buildingHouse =>
+      m.status="Completata!"
+      println(s"Sono ${self.path.name} e lo stato attuale della casa è ${m.status}")
+      println("Complimenti a noi!!!!!")
 
 
 
