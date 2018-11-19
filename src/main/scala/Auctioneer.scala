@@ -13,7 +13,7 @@ import scala.concurrent.duration._
 class Auctioneer() extends Actor{
   import context._
 
-  // Array contenente i nomi dei tasks
+  // This array contains tasks names
   val taskNames = new Array[String](8)
 
   taskNames(0)="SitePreparation"

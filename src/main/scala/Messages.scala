@@ -1,13 +1,13 @@
 import akka.actor.ActorRef
 
-class auctionStatus (var task: Int, var currentBid: Int, var currentWinner: ActorRef, var auctioRef: ActorRef, var open: Boolean)
+case class auctionStatus (var task: Int, var currentBid: Int, var currentWinner: ActorRef, var auctioRef: ActorRef, var open: Boolean)
 
-class bidMessage(var value:Int)
+case class bidMessage(var value:Int)
 
-class showWinners ()
+case class showWinners ()
 
-class AuctionEndMessage (var auction:ActorRef, var auctionID:Int)
+case class AuctionEndMessage (var auction:ActorRef, var auctionID:Int)
 
-class startWorkMessage (var house:buildingHouse)
+case class startWorkMessage (var house:buildingHouse)
 
-class buildingHouse(var status:String, var owner:String, var status2: Int)
+case class buildingHouse(var status:String, var owner:String, var status2: Int)

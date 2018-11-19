@@ -2,36 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cea85a7e-0789-4987-b34f-c37917670830" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/HouseBuilder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HouseBuilder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$632e439b2bff5762c009$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$632e439b2bff5762c009.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$632e439b2bff5762c009.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/housebuilder-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/housebuilder-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-compile-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-compile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-optional.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-provided.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-runtime-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-runtime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-scala-tool.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-test-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-housebuilder-build-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Auctioneer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Auctioneer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Messages.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Messages.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionManager$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionManager$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionManager$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionManager$$anonfun$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/CompanyE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionEndMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionEndMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Auctioneer$$anonfun$receive$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Auctioneer$$anonfun$receive$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/auctionStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/auctionStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/bidMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/bidMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/showWinners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/showWinners.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/default/housebuilder$sbt_2.12/0.1/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/default/housebuilder$sbt_2.12/0.1/resolved.xml.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/default/housebuilder$sbt_2.12/0.1/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/default/housebuilder$sbt_2.12/0.1/resolved.xml.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/default/housebuilder$sources/0.1/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/default/housebuilder$sources/0.1/resolved.xml.properties" afterDir="false" />
@@ -61,8 +43,6 @@
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/default-housebuilder$sources_2.12-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/default-housebuilder$sources_2.12-runtime.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/default-housebuilder$sources_2.12-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/resolution-cache/reports/default-housebuilder$sources_2.12-test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/$global/dumpStructure/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/$global/dumpStructure/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/updateSbtClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterDir="false" />
     </list>
@@ -84,14 +64,16 @@
     <session id="-1106523029">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -109,15 +91,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="sbt" value="2" />
-          <entry key="scala" value="11668" />
-          <entry key="txt" value="415" />
+          <entry key="scala" value="11706" />
+          <entry key="txt" value="667" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="415" />
-          <entry key="Scala" value="11668" />
+          <entry key="PLAIN_TEXT" value="667" />
+          <entry key="Scala" value="11706" />
           <entry key="sbt" value="2" />
         </counts>
       </usages-collector>
@@ -125,11 +107,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="450">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -170,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/CompanyB.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+            <state relative-caret-position="1200">
+              <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -197,11 +179,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Messages.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
+              <caret selection-end-line="12" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -209,8 +191,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Auctioneer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2430">
-              <caret line="172" column="6" selection-start-line="172" selection-start-column="6" selection-end-line="172" selection-end-column="6" />
+            <state relative-caret-position="690">
+              <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="26" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -276,14 +258,14 @@
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/main2.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/AuctionManager.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Messages.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/CompanyA.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/CompanyB.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/CompanyC.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/CompanyD.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/CompanyE.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Auctioneer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Auctioneer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Messages.scala" />
       </list>
     </option>
   </component>
@@ -327,13 +309,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541185456674" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542637062144" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -455,13 +437,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541185334724</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Grafico degli streams completato e aggiunta una piccola parte di conoscenza alle companies che ora sono in grado di determinare il lavoro che stanno svolgendo (in realtà questa parte di potrebbe fare un pò meglio). Comunque, funziona tutto!">
+      <created>1541185910445</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541185910445</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30758226" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32904148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -470,17 +460,17 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962447" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32962447" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32777777" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32962447" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.32916668" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32916668" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" weight="0.32916668" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32684284" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.325" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -500,7 +490,8 @@
     <MESSAGE value="modifiche per lo akka stream" />
     <MESSAGE value="Ho modificato il Merge con un ZipWith e adesso funziona anche con 3 attività in parallelo, non ci resta che modellare il processo esatto dell'house-builder (attualmente è leggermente diverso)" />
     <MESSAGE value="Ho modificato il Merge con un ZipWith e adesso funziona anche con 3 attività in parallelo, in più ho perfezionato le comunicazioni tra gli attori creando appositi messaggi invece che usare stringhe. Non ci resta che modellare il processo esatto dell'house-builder (attualmente è leggermente diverso)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho modificato il Merge con un ZipWith e adesso funziona anche con 3 attività in parallelo, in più ho perfezionato le comunicazioni tra gli attori creando appositi messaggi invece che usare stringhe. Non ci resta che modellare il processo esatto dell'house-builder (attualmente è leggermente diverso)" />
+    <MESSAGE value="Grafico degli streams completato e aggiunta una piccola parte di conoscenza alle companies che ora sono in grado di determinare il lavoro che stanno svolgendo (in realtà questa parte di potrebbe fare un pò meglio). Comunque, funziona tutto!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Grafico degli streams completato e aggiunta una piccola parte di conoscenza alle companies che ora sono in grado di determinare il lavoro che stanno svolgendo (in realtà questa parte di potrebbe fare un pò meglio). Comunque, funziona tutto!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -556,8 +547,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/main2.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="450">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -590,8 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/CompanyB.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+        <state relative-caret-position="1200">
+          <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -612,17 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Messages.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Auctioneer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="172" column="6" selection-start-line="172" selection-start-column="6" selection-end-line="172" selection-end-column="6" />
+        <state relative-caret-position="690">
+          <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="26" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -633,6 +617,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="176" column="15" selection-start-line="176" selection-start-column="15" selection-end-line="176" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Messages.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="79" />
         </state>
       </provider>
     </entry>
