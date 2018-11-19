@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cea85a7e-0789-4987-b34f-c37917670830" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/HouseBuilder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/HouseBuilder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Auctioneer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Auctioneer.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Messages.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Messages.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionEndMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/AuctionEndMessage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Auctioneer$$anonfun$receive$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Auctioneer$$anonfun$receive$1.class" afterDir="false" />
@@ -91,7 +87,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="sbt" value="2" />
-          <entry key="scala" value="11706" />
+          <entry key="scala" value="11707" />
           <entry key="txt" value="667" />
         </counts>
       </usages-collector>
@@ -99,7 +95,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="667" />
-          <entry key="Scala" value="11706" />
+          <entry key="Scala" value="11707" />
           <entry key="sbt" value="2" />
         </counts>
       </usages-collector>
@@ -182,8 +178,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Messages.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="12" selection-end-column="79" />
+            <state relative-caret-position="180">
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -315,7 +311,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542637062144" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542637146509" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -444,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541185910445</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Grafico degli streams completato e aggiunta una piccola parte di conoscenza alle companies che ora sono in grado di determinare il lavoro che stanno svolgendo (in realtà questa parte di potrebbe fare un pò meglio). Comunque, funziona tutto!">
+      <created>1542637122809</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542637122809</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -622,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Messages.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="79" />
+        <state relative-caret-position="180">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
         </state>
       </provider>
     </entry>
